@@ -1,0 +1,73 @@
+<header class="header">
+    <div>
+        {{> logo}}
+    </div>
+    <nav class="header_link">
+        <div class="header_nav_right">
+            {{>nav list=header isVertical=false}}
+        </div>
+    </nav>
+</header>
+
+
+
+
+{{#with main}}
+    <div class="hero">
+        <img src="{{image}}" alt="Hero image" class="hero_image">
+        <div class="hero_content">
+            <h1 class="hero_title">{{heading}}</h1>
+            <p class="hero_text">{{description}}</p>
+            <!-- Move button inside hero_content -->
+            <div class="form_action">
+                <a href="{{href}}" class="button hero_button">{{button}}</a>
+            </div>
+        </div>
+    </div>
+{{/with}}
+
+
+
+
+<main class="blog">
+    {{#each featured}}
+        {{> cardBlog2 featured=this}}
+    {{/each}}
+</main>
+
+
+<div class="form">
+    <div class="form_buttons">
+        <div class="form_item">
+            <h5 class="form_title">Checkout form</h5>
+            <button class="form_button">Checkout</button>
+        </div>
+        <div class="form_item">
+            <h5 class="form_title">Login form</h5>
+            <button class="form_button">Login</button>
+        </div>
+        <div class="form_item">
+            <h5 class="form_title">Signup form</h5>
+            <button class="form_button">Signup</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="page_block">
+    <div class="footer">
+        <div>
+            {{> logo}}
+            <span class="footer_copyright">Copyright 2024</span>
+        </div>
+        {{#each footer}}
+        <div>
+            <span class="footer_title">{{title}}</span>
+            {{>nav list=links isVertical=true}}
+        </div>
+        {{/each}}
+    </div>
+</footer>
+
